@@ -45,7 +45,11 @@
 "    Run py.test test's from within vim
 "
 " MakeGreen
-"    Generic test runner that works with nose
+"   Generic test runner that works with nose
+"
+" tComment
+"   An extensible & universal comment plugin that also handles embedded
+"   filetypes 
 "
 " ==========================================================
 " Shortcuts
