@@ -96,15 +96,15 @@ if $TERM_IS_COLOR && ( dircolors --help && ls --color ) &> /dev/null; then
     [[ -f "$POSSIBLE_DIR_COLORS" ]] && [[ -r "$POSSIBLE_DIR_COLORS" ]] && eval `dircolors -b "$POSSIBLE_DIR_COLORS"` && break
   done
 
-  alias ls="ls --color=auto"
-  alias ll="ls --color=auto -l"
+  alias ls="ls -Gp --color=auto"
+  alias ll="ls -Gp --color=auto -l"
   alias grep='grep --color=auto'
   alias fgrep='fgrep --color=auto'
   alias egrep='egrep --color=auto'
 else
   # No color, so put a slash at the end of directory names, etc. to differentiate.
-  alias ls="ls -F"
-  alias ll="ls -lF"
+  alias ls="ls -Gp -F"
+  alias ll="ls -Gp -lF"
 fi
 
 # Alias definitions.
@@ -143,7 +143,7 @@ if [ "$vim" == "" ]; then
     vim="gvim -v"
 fi
 
-alias vim="$vim"
+# alias vim="$vim"
 
 # osx vim
 if [ -x "/Applications/MacVim.app/Contents/MacOS/Vim" ]; then
