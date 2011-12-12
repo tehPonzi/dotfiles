@@ -94,6 +94,12 @@ nmap <silent><Leader>te <Esc>:Pytest error<CR>
 " Run django tests
 map <leader>dt :set makeprg=python\ manage.py\ test\|:call MakeGreen()<CR>
 
+" Clear screen
+nmap <leader>cls :nohl<CR>
+
+" Open .vimrc in a new Tab
+nmap <leader>rc :edit ~/.vimrc<CR>
+
 " Reload Vimrc
 map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
