@@ -98,7 +98,12 @@ map <leader>dt :set makeprg=python\ manage.py\ test\|:call MakeGreen()<CR>
 nmap <leader>cls :nohl<CR>
 
 " Open .vimrc in a new Tab
-nmap <leader>rc :edit ~/.vimrc<CR>
+nmap <leader>v :tabedit  ~/.vimrc<CR>
+
+" Source .vimcrc automatically once changes are written to disk
+if has("autocmd")
+    autocmd bufwritepost .vimrc source $MYVIMRC
+endif
 
 " Reload Vimrc
 map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
@@ -242,7 +247,8 @@ set incsearch               " Incrementally search while typing a /regex
 
 """" Display
 if has("gui_running")
-    colorscheme vividchalk
+    " colorscheme vividchalk
+    colorscheme wombat256mod
     " Remove menu bar
     set guioptions-=m
 
